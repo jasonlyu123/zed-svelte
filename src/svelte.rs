@@ -74,8 +74,7 @@ impl zed::Extension for SvelteExtension {
     ) -> Result<zed::Command> {
         self.install_package_if_needed(id, PACKAGE_NAME)?;
         self.install_package_if_needed(id, TS_PLUGIN_PACKAGE_NAME)?;
-
-        // Peer dependencies of svelte-language-server. Ensure TypeScript is installed and updated as well
+        // Peer dependency of svelte-language-server. Ensures TypeScript is installed and up to date
         self.install_package_if_needed(id, TYPESCRIPT_PACKAGE_NAME)?;
 
         let path = get_package_path(PACKAGE_NAME)?
